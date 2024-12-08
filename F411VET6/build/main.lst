@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\daveb\AppData\Local\Temp\cc29hRDy.s 			page 1
+ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccYuVcdm.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\daveb\AppData\Local\Temp\cc29hRDy.s 			page 1
   29:Core/Src/main.c **** 
   30:Core/Src/main.c **** /* USER CODE END PTD */
   31:Core/Src/main.c **** 
-ARM GAS  C:\Users\daveb\AppData\Local\Temp\cc29hRDy.s 			page 2
+ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccYuVcdm.s 			page 2
 
 
   32:Core/Src/main.c **** /* Private define ------------------------------------------------------------*/
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\daveb\AppData\Local\Temp\cc29hRDy.s 			page 1
   86:Core/Src/main.c ****   MX_GPIO_Init();
   87:Core/Src/main.c ****   /* USER CODE BEGIN 2 */
   88:Core/Src/main.c **** 
-ARM GAS  C:\Users\daveb\AppData\Local\Temp\cc29hRDy.s 			page 3
+ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccYuVcdm.s 			page 3
 
 
   89:Core/Src/main.c ****   /* USER CODE END 2 */
@@ -128,10 +128,10 @@ ARM GAS  C:\Users\daveb\AppData\Local\Temp\cc29hRDy.s 			page 1
   93:Core/Src/main.c ****   while (1)
   94:Core/Src/main.c ****   {
   95:Core/Src/main.c ****     /* USER CODE END WHILE */
-  96:Core/Src/main.c ****     if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == 1){
-  97:Core/Src/main.c ****       HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_12);
-  98:Core/Src/main.c ****       HAL_Delay(200);
-  99:Core/Src/main.c ****     }
+  96:Core/Src/main.c ****     HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, 1);
+  97:Core/Src/main.c ****     HAL_Delay(200);
+  98:Core/Src/main.c ****     HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, 0);
+  99:Core/Src/main.c ****     HAL_Delay(200);
  100:Core/Src/main.c ****     /* USER CODE BEGIN 3 */
  101:Core/Src/main.c ****   }
  102:Core/Src/main.c ****   /* USER CODE END 3 */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\daveb\AppData\Local\Temp\cc29hRDy.s 			page 1
  143:Core/Src/main.c ****   }
  144:Core/Src/main.c **** }
  145:Core/Src/main.c **** 
-ARM GAS  C:\Users\daveb\AppData\Local\Temp\cc29hRDy.s 			page 4
+ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccYuVcdm.s 			page 4
 
 
  146:Core/Src/main.c **** /**
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\daveb\AppData\Local\Temp\cc29hRDy.s 			page 1
   70 0026 0294     		str	r4, [sp, #8]
   71              		.loc 1 157 3 view .LVU11
   72 0028 1A6B     		ldr	r2, [r3, #48]
-ARM GAS  C:\Users\daveb\AppData\Local\Temp\cc29hRDy.s 			page 5
+ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccYuVcdm.s 			page 5
 
 
   73 002a 42F00802 		orr	r2, r2, #8
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\daveb\AppData\Local\Temp\cc29hRDy.s 			page 1
  113              		.loc 1 171 24 is_stmt 0 view .LVU28
  114 0060 0594     		str	r4, [sp, #20]
  172:Core/Src/main.c ****   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-ARM GAS  C:\Users\daveb\AppData\Local\Temp\cc29hRDy.s 			page 6
+ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccYuVcdm.s 			page 6
 
 
  115              		.loc 1 172 3 is_stmt 1 view .LVU29
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\daveb\AppData\Local\Temp\cc29hRDy.s 			page 1
  154              	.LBB6:
  155              	.LBI6:
  156              		.file 2 "Drivers/CMSIS/Include/cmsis_gcc.h"
-ARM GAS  C:\Users\daveb\AppData\Local\Temp\cc29hRDy.s 			page 7
+ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccYuVcdm.s 			page 7
 
 
    1:Drivers/CMSIS/Include/cmsis_gcc.h **** /**************************************************************************//**
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\daveb\AppData\Local\Temp\cc29hRDy.s 			page 1
   55:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __USED
   56:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __USED                                 __attribute__((used))
   57:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
-ARM GAS  C:\Users\daveb\AppData\Local\Temp\cc29hRDy.s 			page 8
+ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccYuVcdm.s 			page 8
 
 
   58:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __WEAK
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\daveb\AppData\Local\Temp\cc29hRDy.s 			page 1
  112:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
  113:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __RESTRICT
  114:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __RESTRICT                             __restrict
-ARM GAS  C:\Users\daveb\AppData\Local\Temp\cc29hRDy.s 			page 9
+ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccYuVcdm.s 			page 9
 
 
  115:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\daveb\AppData\Local\Temp\cc29hRDy.s 			page 1
  180              		.thumb
  181              		.thumb_func
  183              	SystemClock_Config:
-ARM GAS  C:\Users\daveb\AppData\Local\Temp\cc29hRDy.s 			page 10
+ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccYuVcdm.s 			page 10
 
 
  184              	.LFB131:
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\daveb\AppData\Local\Temp\cc29hRDy.s 			page 1
  227              		.loc 1 116 3 view .LVU50
  117:Core/Src/main.c **** 
  228              		.loc 1 117 3 view .LVU51
-ARM GAS  C:\Users\daveb\AppData\Local\Temp\cc29hRDy.s 			page 11
+ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccYuVcdm.s 			page 11
 
 
  229              	.LBB9:
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\daveb\AppData\Local\Temp\cc29hRDy.s 			page 1
  133:Core/Src/main.c ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
  267              		.loc 1 133 3 is_stmt 1 view .LVU68
  133:Core/Src/main.c ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
-ARM GAS  C:\Users\daveb\AppData\Local\Temp\cc29hRDy.s 			page 12
+ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccYuVcdm.s 			page 12
 
 
  268              		.loc 1 133 31 is_stmt 0 view .LVU69
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\daveb\AppData\Local\Temp\cc29hRDy.s 			page 1
  308              	.L14:
  309              		.align	2
  310              	.L13:
-ARM GAS  C:\Users\daveb\AppData\Local\Temp\cc29hRDy.s 			page 13
+ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccYuVcdm.s 			page 13
 
 
  311 0080 00380240 		.word	1073887232
@@ -758,68 +758,71 @@ ARM GAS  C:\Users\daveb\AppData\Local\Temp\cc29hRDy.s 			page 1
  343              	.LVL10:
  344              	.L16:
   93:Core/Src/main.c ****   {
- 345              		.loc 1 93 3 view .LVU88
-  96:Core/Src/main.c ****       HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_12);
- 346              		.loc 1 96 5 view .LVU89
-  96:Core/Src/main.c ****       HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_12);
- 347              		.loc 1 96 8 is_stmt 0 view .LVU90
- 348 000e 0121     		movs	r1, #1
- 349 0010 0648     		ldr	r0, .L19
- 350 0012 FFF7FEFF 		bl	HAL_GPIO_ReadPin
- 351              	.LVL11:
-  96:Core/Src/main.c ****       HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_12);
- 352              		.loc 1 96 7 view .LVU91
- 353 0016 0128     		cmp	r0, #1
- 354 0018 F9D1     		bne	.L16
-  97:Core/Src/main.c ****       HAL_Delay(200);
- 355              		.loc 1 97 7 is_stmt 1 view .LVU92
- 356 001a 4FF48051 		mov	r1, #4096
- 357 001e 0448     		ldr	r0, .L19+4
- 358 0020 FFF7FEFF 		bl	HAL_GPIO_TogglePin
- 359              	.LVL12:
-  98:Core/Src/main.c ****     }
-ARM GAS  C:\Users\daveb\AppData\Local\Temp\cc29hRDy.s 			page 14
+ 345              		.loc 1 93 3 discriminator 1 view .LVU88
+  96:Core/Src/main.c ****     HAL_Delay(200);
+ 346              		.loc 1 96 5 discriminator 1 view .LVU89
+ 347 000e 0A4C     		ldr	r4, .L18
+ 348 0010 0122     		movs	r2, #1
+ 349 0012 4FF48051 		mov	r1, #4096
+ 350 0016 2046     		mov	r0, r4
+ 351 0018 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 352              	.LVL11:
+  97:Core/Src/main.c ****     HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, 0);
+ 353              		.loc 1 97 5 discriminator 1 view .LVU90
+ 354 001c C820     		movs	r0, #200
+ 355 001e FFF7FEFF 		bl	HAL_Delay
+ 356              	.LVL12:
+  98:Core/Src/main.c ****     HAL_Delay(200);
+ 357              		.loc 1 98 5 discriminator 1 view .LVU91
+ 358 0022 0022     		movs	r2, #0
+ 359 0024 4FF48051 		mov	r1, #4096
+ 360 0028 2046     		mov	r0, r4
+ 361 002a FFF7FEFF 		bl	HAL_GPIO_WritePin
+ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccYuVcdm.s 			page 14
 
 
- 360              		.loc 1 98 7 view .LVU93
- 361 0024 C820     		movs	r0, #200
- 362 0026 FFF7FEFF 		bl	HAL_Delay
- 363              	.LVL13:
- 364 002a F0E7     		b	.L16
- 365              	.L20:
- 366              		.align	2
- 367              	.L19:
- 368 002c 00000240 		.word	1073872896
- 369 0030 000C0240 		.word	1073875968
- 370              		.cfi_endproc
- 371              	.LFE130:
- 373              		.text
- 374              	.Letext0:
- 375              		.file 3 "c:\\program files (x86)\\gnu arm embedded toolchain\\10 2021.10\\arm-none-eabi\\include\\
- 376              		.file 4 "c:\\program files (x86)\\gnu arm embedded toolchain\\10 2021.10\\arm-none-eabi\\include\\
- 377              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h"
- 378              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h"
- 379              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h"
- 380              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
- 381              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 382              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
- 383              		.file 11 "<built-in>"
-ARM GAS  C:\Users\daveb\AppData\Local\Temp\cc29hRDy.s 			page 15
+ 362              	.LVL13:
+  99:Core/Src/main.c ****     /* USER CODE BEGIN 3 */
+ 363              		.loc 1 99 5 discriminator 1 view .LVU92
+ 364 002e C820     		movs	r0, #200
+ 365 0030 FFF7FEFF 		bl	HAL_Delay
+ 366              	.LVL14:
+  93:Core/Src/main.c ****   {
+ 367              		.loc 1 93 9 discriminator 1 view .LVU93
+ 368 0034 EBE7     		b	.L16
+ 369              	.L19:
+ 370 0036 00BF     		.align	2
+ 371              	.L18:
+ 372 0038 000C0240 		.word	1073875968
+ 373              		.cfi_endproc
+ 374              	.LFE130:
+ 376              		.text
+ 377              	.Letext0:
+ 378              		.file 3 "c:\\program files (x86)\\gnu arm embedded toolchain\\10 2021.10\\arm-none-eabi\\include\\
+ 379              		.file 4 "c:\\program files (x86)\\gnu arm embedded toolchain\\10 2021.10\\arm-none-eabi\\include\\
+ 380              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h"
+ 381              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h"
+ 382              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h"
+ 383              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
+ 384              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 385              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 386              		.file 11 "<built-in>"
+ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccYuVcdm.s 			page 15
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\daveb\AppData\Local\Temp\cc29hRDy.s:20     .text.MX_GPIO_Init:00000000 $t
-C:\Users\daveb\AppData\Local\Temp\cc29hRDy.s:25     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
-C:\Users\daveb\AppData\Local\Temp\cc29hRDy.s:132    .text.MX_GPIO_Init:00000070 $d
-C:\Users\daveb\AppData\Local\Temp\cc29hRDy.s:139    .text.Error_Handler:00000000 $t
-C:\Users\daveb\AppData\Local\Temp\cc29hRDy.s:145    .text.Error_Handler:00000000 Error_Handler
-C:\Users\daveb\AppData\Local\Temp\cc29hRDy.s:177    .text.SystemClock_Config:00000000 $t
-C:\Users\daveb\AppData\Local\Temp\cc29hRDy.s:183    .text.SystemClock_Config:00000000 SystemClock_Config
-C:\Users\daveb\AppData\Local\Temp\cc29hRDy.s:311    .text.SystemClock_Config:00000080 $d
-C:\Users\daveb\AppData\Local\Temp\cc29hRDy.s:317    .text.main:00000000 $t
-C:\Users\daveb\AppData\Local\Temp\cc29hRDy.s:323    .text.main:00000000 main
-C:\Users\daveb\AppData\Local\Temp\cc29hRDy.s:368    .text.main:0000002c $d
+C:\Users\daveb\AppData\Local\Temp\ccYuVcdm.s:20     .text.MX_GPIO_Init:00000000 $t
+C:\Users\daveb\AppData\Local\Temp\ccYuVcdm.s:25     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
+C:\Users\daveb\AppData\Local\Temp\ccYuVcdm.s:132    .text.MX_GPIO_Init:00000070 $d
+C:\Users\daveb\AppData\Local\Temp\ccYuVcdm.s:139    .text.Error_Handler:00000000 $t
+C:\Users\daveb\AppData\Local\Temp\ccYuVcdm.s:145    .text.Error_Handler:00000000 Error_Handler
+C:\Users\daveb\AppData\Local\Temp\ccYuVcdm.s:177    .text.SystemClock_Config:00000000 $t
+C:\Users\daveb\AppData\Local\Temp\ccYuVcdm.s:183    .text.SystemClock_Config:00000000 SystemClock_Config
+C:\Users\daveb\AppData\Local\Temp\ccYuVcdm.s:311    .text.SystemClock_Config:00000080 $d
+C:\Users\daveb\AppData\Local\Temp\ccYuVcdm.s:317    .text.main:00000000 $t
+C:\Users\daveb\AppData\Local\Temp\ccYuVcdm.s:323    .text.main:00000000 main
+C:\Users\daveb\AppData\Local\Temp\ccYuVcdm.s:372    .text.main:00000038 $d
 
 UNDEFINED SYMBOLS
 HAL_GPIO_WritePin
@@ -828,6 +831,4 @@ memset
 HAL_RCC_OscConfig
 HAL_RCC_ClockConfig
 HAL_Init
-HAL_GPIO_ReadPin
-HAL_GPIO_TogglePin
 HAL_Delay
