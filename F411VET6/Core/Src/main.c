@@ -92,11 +92,17 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+    if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == 0){
+      HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, 1);
+    }
+    else{
+      HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, 1);
+      HAL_Delay(200);
+      HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, 0);
+      HAL_Delay(200);
+    }
     /* USER CODE END WHILE */
-    HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, 1);
-    HAL_Delay(200);
-    HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, 0);
-    HAL_Delay(200);
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
