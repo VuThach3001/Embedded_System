@@ -31,3 +31,8 @@ B3: Restart the computer
 
 Enjoy!!
 
+=================================
+Using ST-Link Ultility
+If using that, need to reselect the hex file 1 more time to make the application reload the file then the file can be updated
+
+
