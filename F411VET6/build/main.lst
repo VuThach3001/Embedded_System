@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccRqjiPc.s 			page 1
+ARM GAS  /tmp/ccbR2tlP.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccRqjiPc.s 			page 1
   29:Core/Src/main.c **** 
   30:Core/Src/main.c **** /* USER CODE END PTD */
   31:Core/Src/main.c **** 
-ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccRqjiPc.s 			page 2
+ARM GAS  /tmp/ccbR2tlP.s 			page 2
 
 
   32:Core/Src/main.c **** /* Private define ------------------------------------------------------------*/
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccRqjiPc.s 			page 1
   86:Core/Src/main.c ****   MX_GPIO_Init();
   87:Core/Src/main.c ****   /* USER CODE BEGIN 2 */
   88:Core/Src/main.c **** 
-ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccRqjiPc.s 			page 3
+ARM GAS  /tmp/ccbR2tlP.s 			page 3
 
 
   89:Core/Src/main.c ****   /* USER CODE END 2 */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccRqjiPc.s 			page 1
  143:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
  144:Core/Src/main.c ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
  145:Core/Src/main.c **** 
-ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccRqjiPc.s 			page 4
+ARM GAS  /tmp/ccbR2tlP.s 			page 4
 
 
  146:Core/Src/main.c ****   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0) != HAL_OK)
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccRqjiPc.s 			page 1
   65              	.LBE4:
   66              		.loc 1 162 3 view .LVU8
  163:Core/Src/main.c ****   __HAL_RCC_GPIOD_CLK_ENABLE();
-ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccRqjiPc.s 			page 5
+ARM GAS  /tmp/ccbR2tlP.s 			page 5
 
 
   67              		.loc 1 163 3 view .LVU9
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccRqjiPc.s 			page 1
  176:Core/Src/main.c ****   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
  109              		.loc 1 176 3 is_stmt 1 view .LVU25
  110              		.loc 1 176 24 is_stmt 0 view .LVU26
-ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccRqjiPc.s 			page 6
+ARM GAS  /tmp/ccbR2tlP.s 			page 6
 
 
  111 005e 0496     		str	r6, [sp, #16]
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccRqjiPc.s 			page 1
  151              		@ frame_needed = 0, uses_anonymous_args = 0
  152              		@ link register save eliminated.
  193:Core/Src/main.c ****   /* USER CODE BEGIN Error_Handler_Debug */
-ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccRqjiPc.s 			page 7
+ARM GAS  /tmp/ccbR2tlP.s 			page 7
 
 
  194:Core/Src/main.c ****   /* User can add his own implementation to report the HAL error return state */
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccRqjiPc.s 			page 1
   49:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __STATIC_FORCEINLINE                 
   50:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __STATIC_FORCEINLINE                   __attribute__((always_inline)) static inline
   51:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif                                           
-ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccRqjiPc.s 			page 8
+ARM GAS  /tmp/ccbR2tlP.s 			page 8
 
 
   52:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __NO_RETURN
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccRqjiPc.s 			page 1
  106:Drivers/CMSIS/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT32_READ { uint32_t v; };
  107:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
  108:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32_READ(addr)          (((const struct T_UINT32_READ *)(const void *)(add
-ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccRqjiPc.s 			page 9
+ARM GAS  /tmp/ccbR2tlP.s 			page 9
 
 
  109:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccRqjiPc.s 			page 1
  173              		.cfi_endproc
  174              	.LFE133:
  176              		.section	.text.SystemClock_Config,"ax",%progbits
-ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccRqjiPc.s 			page 10
+ARM GAS  /tmp/ccbR2tlP.s 			page 10
 
 
  177              		.align	1
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccRqjiPc.s 			page 1
  223 002c 0192     		str	r2, [sp, #4]
  122:Core/Src/main.c ****   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
  224              		.loc 1 122 3 view .LVU49
-ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccRqjiPc.s 			page 11
+ARM GAS  /tmp/ccbR2tlP.s 			page 11
 
 
  225 002e 019A     		ldr	r2, [sp, #4]
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccRqjiPc.s 			page 1
  262 0054 08A8     		add	r0, sp, #32
  263 0056 FFF7FEFF 		bl	HAL_RCC_OscConfig
  264              	.LVL4:
-ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccRqjiPc.s 			page 12
+ARM GAS  /tmp/ccbR2tlP.s 			page 12
 
 
  132:Core/Src/main.c ****   {
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccRqjiPc.s 			page 1
  303              	.LVL6:
  304              	.L12:
  148:Core/Src/main.c ****   }
-ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccRqjiPc.s 			page 13
+ARM GAS  /tmp/ccbR2tlP.s 			page 13
 
 
  305              		.loc 1 148 5 view .LVU83
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccRqjiPc.s 			page 1
  354              		.loc 1 95 5 view .LVU90
   95:Core/Src/main.c ****       HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, 1);
  355              		.loc 1 95 8 is_stmt 0 view .LVU91
-ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccRqjiPc.s 			page 14
+ARM GAS  /tmp/ccbR2tlP.s 			page 14
 
 
  356 001c 0121     		movs	r1, #1
@@ -824,8 +824,8 @@ ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccRqjiPc.s 			page 1
  391              	.LFE130:
  393              		.text
  394              	.Letext0:
- 395              		.file 3 "c:\\program files (x86)\\gnu arm embedded toolchain\\10 2021.10\\arm-none-eabi\\include\\
- 396              		.file 4 "c:\\program files (x86)\\gnu arm embedded toolchain\\10 2021.10\\arm-none-eabi\\include\\
+ 395              		.file 3 "/opt/gcc-arm/arm-none-eabi/include/machine/_default_types.h"
+ 396              		.file 4 "/opt/gcc-arm/arm-none-eabi/include/sys/_stdint.h"
  397              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h"
  398              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h"
  399              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h"
@@ -833,22 +833,22 @@ ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccRqjiPc.s 			page 1
  401              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
  402              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
  403              		.file 11 "<built-in>"
-ARM GAS  C:\Users\daveb\AppData\Local\Temp\ccRqjiPc.s 			page 15
+ARM GAS  /tmp/ccbR2tlP.s 			page 15
 
 
 DEFINED SYMBOLS
-                            *ABS*:00000000 main.c
-C:\Users\daveb\AppData\Local\Temp\ccRqjiPc.s:20     .text.MX_GPIO_Init:00000000 $t
-C:\Users\daveb\AppData\Local\Temp\ccRqjiPc.s:25     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
-C:\Users\daveb\AppData\Local\Temp\ccRqjiPc.s:132    .text.MX_GPIO_Init:00000070 $d
-C:\Users\daveb\AppData\Local\Temp\ccRqjiPc.s:139    .text.Error_Handler:00000000 $t
-C:\Users\daveb\AppData\Local\Temp\ccRqjiPc.s:145    .text.Error_Handler:00000000 Error_Handler
-C:\Users\daveb\AppData\Local\Temp\ccRqjiPc.s:177    .text.SystemClock_Config:00000000 $t
-C:\Users\daveb\AppData\Local\Temp\ccRqjiPc.s:183    .text.SystemClock_Config:00000000 SystemClock_Config
-C:\Users\daveb\AppData\Local\Temp\ccRqjiPc.s:311    .text.SystemClock_Config:00000080 $d
-C:\Users\daveb\AppData\Local\Temp\ccRqjiPc.s:317    .text.main:00000000 $t
-C:\Users\daveb\AppData\Local\Temp\ccRqjiPc.s:323    .text.main:00000000 main
-C:\Users\daveb\AppData\Local\Temp\ccRqjiPc.s:388    .text.main:00000050 $d
+                            *ABS*:0000000000000000 main.c
+     /tmp/ccbR2tlP.s:20     .text.MX_GPIO_Init:0000000000000000 $t
+     /tmp/ccbR2tlP.s:25     .text.MX_GPIO_Init:0000000000000000 MX_GPIO_Init
+     /tmp/ccbR2tlP.s:132    .text.MX_GPIO_Init:0000000000000070 $d
+     /tmp/ccbR2tlP.s:139    .text.Error_Handler:0000000000000000 $t
+     /tmp/ccbR2tlP.s:145    .text.Error_Handler:0000000000000000 Error_Handler
+     /tmp/ccbR2tlP.s:177    .text.SystemClock_Config:0000000000000000 $t
+     /tmp/ccbR2tlP.s:183    .text.SystemClock_Config:0000000000000000 SystemClock_Config
+     /tmp/ccbR2tlP.s:311    .text.SystemClock_Config:0000000000000080 $d
+     /tmp/ccbR2tlP.s:317    .text.main:0000000000000000 $t
+     /tmp/ccbR2tlP.s:323    .text.main:0000000000000000 main
+     /tmp/ccbR2tlP.s:388    .text.main:0000000000000050 $d
 
 UNDEFINED SYMBOLS
 HAL_GPIO_WritePin
