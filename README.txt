@@ -1,5 +1,7 @@
 Steps for setting up to compile software using MAKE in Windows:
 Prerequisite:
+
+Note: Follow this youtube link: https://www.youtube.com/watch?v=PxQw5_7yI8Q&t=403s for STM32 toolchain for Windows or follow the below:
 - GCC download link: https://developer.arm.com/downloads/-/gnu-rm
 - make tool download link (take only the binary folder and dependecies folder): https://gnuwin32.sourceforge.net/packages/make.htm
     -> Copy *.dll from dependecies folder into the bin folder and correspondingly the manifest folder
