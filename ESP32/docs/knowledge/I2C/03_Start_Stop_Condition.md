@@ -31,6 +31,8 @@
   - In the fourth part, we will keep SCL low and pull up SDA to high. Now SCL is low and SDA is high.
   - This completes one bit duration. We can repeat this process for the next bit.
 
+![alt text](Screenshot-187.png)
+
 ---
 
 ### Summary Section (Summary of Notes)
