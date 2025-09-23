@@ -7,6 +7,7 @@
 ---
 
 ### Cue Column (Questions, Keywords, or Prompts)
+- Still unclear about functionality of Open Drain for preventing short circuit? How can it do that?
 
 ---
 

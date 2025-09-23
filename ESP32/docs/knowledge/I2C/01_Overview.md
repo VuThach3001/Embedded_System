@@ -7,6 +7,10 @@
 ---
 
 ### Cue Column (Questions, Keywords, or Prompts)
+- EEPROM is a device?
+- How to configure Clock Stretching?
+- What is RTCs?
+- Detail about **Repeat Start Condition**?
 
 ---
 
@@ -23,7 +27,33 @@
   - Twisted wires: to supress the noise
 - If you plan to add more than 3 devices using I2C, you need to refer to the specification sheet and the accordingly add components to match the electrical parameters
 
-**2. Mode**
+**2. I2C Interface**
+
+- It needs only two wires for exchanging data and ground as the reference.
+  - SDA – Serial Data
+  - SCL – Serial Clock
+  - GND – Ground
+
+  ![alt text](image-6.png)
+
+**3. I2C Hardware**
+- Devices on an I2C bus is always a master or a slave.
+
+  **Master:**
+
+  - Master is the device which always initiates a communication and drives the clock line (SCL). Usually a microcontroller or microprocessor acts a master which needs to read data from or write data to slave peripherals.
+
+  **Slave:**
+  - Slave devices are always responds to master and won’t initiate any communication by itself. Usually devices like **EEPROM**, LCDs, **RTCs** acts as a slave device. Each slave device will have a **unique address** such that master can request data from or write data to it.
+
+**4. I2C Protocol**
+- I2C protocol is more complex than UART or SPI protocols as it using only 2 lines (one for clock and one for data) for to and from communication. But usually we don’t need to worry about it as in most of the devices hardware itself will take care of these things.
+
+![alt text](image-7.png)
+
+- Always a master device takes ownership of the bus at a time and initiate data transfer.
+
+**4.1 Mode**
 
 - Synchronous
 - Multi-master
