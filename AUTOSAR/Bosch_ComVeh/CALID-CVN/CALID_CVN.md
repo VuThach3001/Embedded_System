@@ -103,31 +103,35 @@
 - The CALID consists of 16 bytes, for easier handling they are called DATA A — P.
 - For correct display of the CALID on the tester, the tester expects the CALID as an uint8 array: Com_st<ecu-name>Calid[].
 - The CALID needs to be prepared in the array in that format:
-  - DATA A --> Com_st<ecu-name>Calid[0]
-  - DATA B --> Com_st<ecu-name>Calid[1]
-  - DATA C --> Com_st<ecu-name>Calid[2]
-  - DATA D --> Com_st<ecu-name>Calid[3]
-  - DATA E --> Com_st<ecu-name>Calid[4]
-  - DATA F --> Com_st<ecu-name>Calid[5]
-  - DATA G --> Com_st<ecu-name>Calid[6]
-  - DATA H --> Com_st<ecu-name>Calid[7]
-  - DATA I --> Com_st<ecu-name>Calid[8]
-  - DATA J --> Com_st<ecu-name>Calid[9]
-  - DATA K --> Com_st<ecu-name>Calid[10]
-  - DATA L --> Com_st<ecu-name>Calid[11]
-  - DATA M --> Com_st<ecu-name>Calid[12]
-  - DATA N --> Com_st<ecu-name>Calid[13]
-  - DATA O --> Com_st<ecu-name>Calid[14]
-  - DATA P --> Com_st<ecu-name>Calid[15]
+  |        |                           |
+  | ------ | ------------------------- |
+  | DATA A | Com_st<ecu-name>Calid[0]  |
+  | DATA B | Com_st<ecu-name>Calid[1]  |
+  | DATA C | Com_st<ecu-name>Calid[2]  |
+  | DATA D | Com_st<ecu-name>Calid[3]  |
+  | DATA E | Com_st<ecu-name>Calid[4]  |
+  | DATA F | Com_st<ecu-name>Calid[5]  |
+  | DATA G | Com_st<ecu-name>Calid[6]  |
+  | DATA H | Com_st<ecu-name>Calid[7]  |
+  | DATA I | Com_st<ecu-name>Calid[8]  |
+  | DATA J | Com_st<ecu-name>Calid[9]  |
+  | DATA K | Com_st<ecu-name>Calid[10] |
+  | DATA L | Com_st<ecu-name>Calid[11] |
+  | DATA M | Com_st<ecu-name>Calid[12] |
+  | DATA N | Com_st<ecu-name>Calid[13] |
+  | DATA O | Com_st<ecu-name>Calid[14] |
+  | DATA P | Com_st<ecu-name>Calid[15] |
 
 **CVN:**
 - The CVN consists of 4 bytes, for easier handling the are called: DATA A – D. 
 - For correct display of the CVN on the tester, the tester expects the CAN provided as uint8 array: Com_nrCvn<ecu-name>[].
 - The CVN needs to be prepared in the array in that format:
-  - DATA A --> Com_nrCvn<ecu-name>[0]
-  - DATA B --> Com_nrCvn<ecu-name>[1]
-  - DATA C --> Com_nrCvn<ecu-name>[2]
-  - DATA D --> Com_nrCvn<ecu-name>[3]
+  |        |                        |
+  | ------ | ---------------------- |
+  | DATA A | Com_nrCvn<ecu-name>[0] |
+  | DATA B | Com_nrCvn<ecu-name>[1] |
+  | DATA C | Com_nrCvn<ecu-name>[2] |
+  | DATA D | Com_nrCvn<ecu-name>[3] |
 
 **Preconditions:**
 - The CALID- and CVN-PDUs need to be enabled: Bit 0 
