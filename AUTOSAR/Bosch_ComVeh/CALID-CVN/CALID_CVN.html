@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CALID_CVN.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="cornell-notes">Cornell Notes</h1>
+<h2 id="topic-calid-cvn">Topic: CALID CVN</h2>
+<h2 id="date-18092025">Date: 18/09/2025</h2>
+<hr>
+<h3 id="cue-column-questions-keywords-or-prompts">Cue Column (Questions, Keywords, or Prompts)</h3>
+<hr>
+<h3 id="notes-section-main-notes">Notes Section (Main Notes)</h3>
+<p><strong>1. Definition of Term:</strong></p>
+<ul>
+<li>CALID = Calibration ID = Kalibrierungs-Identifikation = Calibration identification</li>
+<li>CVN = Calibration Verification Number = Prüfsumme = Checksum</li>
+</ul>
+<p><strong>1.1. CALID</strong></p>
+<ul>
+<li>Identification code for a specific software/calibration contained in a server/electronic control unit (ECU)</li>
+<li>Note 1 to entry: If regulations require calibration identifications for emission-related software, those shall be reported in a standardized format as specified in SAE J1979-DA.</li>
+</ul>
+<p><strong>1.2. CVN</strong></p>
+<ul>
+<li>Server/ECU calculated verification number of a calibration identification number to verify the integrity of the software/calibration contained in a server/ECU</li>
+<li>Note 1 to entry: If regulations require calibration identifications for emission-related software, those shall be reported in a standardised format as specified in ISO 15031-2.</li>
+</ul>
+<p><strong>1.3. Secondary ECU</strong></p>
+<ul>
+<li>In the following, a specification of the OBD handling in AUTOSAR is introduced. Herein,</li>
+<li>“OBD“ is used for automotive OBD with respect to different target markets. For SW-
+sharing and distributed development reasons as well as aspects of packaging and
+responsibility of releases, the OBD-relevant information / data structures need to be
+reported via Standardized AUTOSAR interfaces.</li>
+<li>In a vehicle there can be 3 different kinds of OBD ECUs:
+<ul>
+<li>Master ECU (one per vehicle), in WWH-OBD referenced as VOBD</li>
+<li>Primary ECU (several per vehicle)</li>
+<li><strong>Dependent / Secondary ECUs</strong> (several per vehicle)</li>
+</ul>
+</li>
+<li>From the Basic Software point of view <strong>Dependent / Secondary ECUs</strong> doesn’t
+need any specific OBD functionality. In <strong>Dependent / Secondary ECUs</strong> are always
+related to a Master or a Primary ECU. In <strong>Dependent / Secondary ECUs</strong> OBD-
+relevant information will not be stored in the Basic Software (e.g. OBD events will be
+forwarded to the respective Master or Primary ECU via the Bussystem). In Depen-
+dent / Secondary ECUs this &quot;reported errors&quot; and other OBD functionality might
+be handeled by a SW component.</li>
+</ul>
+<p><strong>1.4. AUTOSAR Standard</strong></p>
+<ul>
+<li>Following <a href="https://www.autosar.org/fileadmin/standards/R17-03_R1.1.0/FO/AUTOSAR_PRS_RemoteEventCommunicationProtocol.pdf">AUTOSAR - Remote Event Communication
+Protocol Specification</a> standard</li>
+<li>Information for <a href="https://www.autosar.org/fileadmin/standards/R20-11/CP/AUTOSAR_SWS_DiagnosticEventManager.pdf">Secondary ECU</a></li>
+</ul>
+<p><strong>1.5. Protocol Specification:</strong></p>
+<p><strong>Message formats</strong></p>
+<ul>
+<li>This chapter specifies all of the message formats of the RecM Bus Protocol.</li>
+<li>Unless otherwise specified, all messages are of the &quot;fire and forget&quot; type; meaning
+that, after a request is sent, there is no response message.</li>
+<li>For both the <strong>Status</strong> and <strong>Management messages</strong>, the same basic RecM Bus Protocol
+message format is used. It consists of the Header segment, the Payload segment and
+the Tail segment.</li>
+</ul>
+<p><img src="image.png" alt="alt text"></p>
+<ul>
+<li>The Header of all <strong>Status messages</strong> contains three fields: a Message Type, a Client
+Identifier and a Reserved field.</li>
+<li>The Header of all <strong>Management messages</strong> contains two fields: a Message Type and a
+Reserved field.</li>
+<li>The Tail of both the <strong>Status</strong> and <strong>Management messages</strong> contains a common Message
+Counter field.</li>
+</ul>
+<p><strong>Client Identifier (CLIENT_ID) field format</strong></p>
+<ul>
+<li>The Client Identifier (CLIENT_ID) is a Secondary ECU identifier which is obtained from the Diagnostic Management module.</li>
+</ul>
+<p><strong>2. CALID-CVN-Toolchain and Workflow</strong></p>
+<p><strong>2.1. CALID-CVN-Toolchain Overview</strong></p>
+<p><img src="editor_image_d9d5f67d-1fcd-471c-864b-8fbe8444db09.png" alt="alt text"></p>
+<p><strong>2.2. CALID-CVN-Workflow</strong></p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Task</th>
+<th>Description</th>
+<th>Role</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>K-Matrix Analysis</td>
+<td>During K-Matrix update, PDUs are checked for new CALID-CVN-PDUs (Naming)</td>
+<td>Cupf</td>
+<td>List new CALID-CVNs and their PDUs and signals</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Signal port creation</td>
+<td>According to the Signals list, Signal ports are added in Signal-Database</td>
+<td>Cupf</td>
+<td>Signal ports for CALID-CVN in Signal-Database</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Signal Mapping configuration</td>
+<td>Signal mappings for the CALID-CVN-Signals are created in:<br> <em>SignalMappings-Sheet</em> <code>comscl_netmtrx_rbands.xlsx</code></td>
+<td>Cupf</td>
+<td>Signal-Mappings in <code>comscl_netmtrx_rbands.xlsx</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>CALID-CVN-Configuration</td>
+<td>CALID-CVN-Configuration is created/provided in:<br> Tab <em>CalldCvnConfiguration</em> in <code>comscl_netmtrx_rbands.xlsx</code></td>
+<td>Cupf</td>
+<td>CALID-CVN-Configuration in <code>comscl_netmtrx_rbands.xlsx</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td>ConfigurationValues generation</td>
+<td>EcuC-Configuration for CALID-CVN is generated by:<br> running <code>rba_nds_gen.pl</code></td>
+<td>FnD</td>
+<td><code>comscl_netmtrx_calidcvn_ecucvalues.arxml</code><br><code>comscl_netmtrx_calidcvn_confdata.xml</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td>check-in</td>
+<td>EcuC-Configuration is checked-in in:<br> FC-ARB : <code>ComScl_NetMtrx</code></td>
+<td>FnD</td>
+<td>FC-ARB : <code>ComScl_NetMtrx</code> with check-in:<br><code>comscl_netmtrx_calidcvn_ecucvalues.arxml</code><br><code>comscl_netmtrx_calidcvn_confdata.xml</code></td>
+</tr>
+<tr>
+<td>7</td>
+<td>SWB, Testing, …</td>
+<td>Further steps as per ProcLib</td>
+<td>…</td>
+<td>Released BC</td>
+</tr>
+</tbody>
+</table>
+<p><strong>3. CALID-CVN Configuration</strong></p>
+<p><strong>3.1. CALID-CVN-Configuration in <code>comscl_netmtrx_rbands.xlsx</code></strong></p>
+<ul>
+<li>CALID-CVN-Configuration is done in tab &quot;CalIdCvnConfiguration&quot; in <code>comscl_netmtrx_rbands.xlsx</code></li>
+<li>Configuration Tags:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CalIdCvn</code></td>
+<td>Name of the CALID-CVN-ECU</td>
+</tr>
+<tr>
+<td><code>BusName</code></td>
+<td>Name of the bus where the CALID-CVN-ECU is located – shall equal tag <code>NetworkName</code> in tab <em>Configuration</em></td>
+</tr>
+<tr>
+<td><code>CalId_Type</code></td>
+<td>Type of the CALID.<br><strong>Valid types:</strong><br>- <code>split</code>: CALID is sent via 16 8-bit signals, distributed over 1 or more PDUs. Signals are numbered in ascending order 1–16.</td>
+</tr>
+<tr>
+<td><code>CalId_PduCount</code></td>
+<td>Count of CALID-PDUs. Usual are 1 or 2.</td>
+</tr>
+<tr>
+<td><code>CalId_Pdus</code></td>
+<td>Name of the CALID-PDUs.<br><strong>Valid syntax:</strong><br>- <strong>Single-PDU:</strong> <code>&lt;PduName&gt;</code><br>- <strong>Multiple-PDUs:</strong> <code>&lt;CommonName&gt;_&lt;X&gt;</code> (… <code>&lt;X&gt;</code> placeholder for 1-digit running number)<br> <code>&lt;CommonName&gt;_&lt;XX&gt;</code> (… <code>&lt;XX&gt;</code> placeholder for 2-digit running number)</td>
+</tr>
+<tr>
+<td><code>CalId_DataSignals</code></td>
+<td>Name of the CALID-Signals.<br><strong>Valid syntax:</strong> <code>&lt;CommonName&gt;_&lt;XX&gt;</code> (… <code>&lt;XX&gt;</code> placeholder for 2-digit running number)</td>
+</tr>
+<tr>
+<td><code>Cvn_Type</code></td>
+<td>Type of the CVN.<br><strong>Valid types:</strong><br>- <code>split</code>: CVN is sent via 4 8-bit signals. Signals are numbered in ascending order 1–4.<br>- <code>atomic</code>: CVN is sent via 1 32-bit Signal.</td>
+</tr>
+<tr>
+<td><code>Cvn_PduCount</code></td>
+<td>Count of CVN-PDUs. Usual 1.</td>
+</tr>
+<tr>
+<td><code>Cvn_Pdus</code></td>
+<td>Name of the CVN-PDU.<br><strong>Valid syntax:</strong> <code>&lt;PduName&gt;</code></td>
+</tr>
+<tr>
+<td><code>Cvn_DataSignals</code></td>
+<td>Name of the CVN-Signals.<br><strong>Valid syntax:</strong><br>- <strong>One Signal:</strong> <code>&lt;Signal_Name&gt;</code><br>- <strong>More Signals:</strong> <code>&lt;CommonName&gt;_&lt;X&gt;</code> (… <code>&lt;X&gt;</code> placeholder for 1-digit running number)<br><code>&lt;CommonName&gt;_&lt;XX&gt;</code> (… <code>&lt;XX&gt;</code> placeholder for 2-digit running number)</td>
+</tr>
+<tr>
+<td><code>Cvn_VldSignal</code></td>
+<td>Name of the CVN-Valid (Vld)-Signal.<br>If there is no CVN-Valid-Signal, value <code>none</code> must be entered.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Signalmappings for CalId/Cvn ports must be provided in Signal Mappings Sheet</li>
+<li>Please consider: Port for CvnVld Signal must not have name &quot;<code>Com_flg&lt;CalId&gt;CvnVld</code>&quot;. An interface with the same name is expected by the DiaBas module. So the name of the port mapping of the CvnVld Signal must be changed slightly. E.g. In above example the signalport name for CvnVld Signal is &quot;ComFlgEKATCvnVldPort&quot;. Ist recommended to use same or similar nomenclature.</li>
+</ul>
+<p><strong>3.2. CALID-CVN-Configuration-Example</strong></p>
+<ul>
+<li>
+<p>E.g. EKAT Calid on Motor_SUBCAN of E3P:</p>
+<ul>
+<li>CalId PDUs: EKAT_CALID_01, EKAT_CALID_02</li>
+<li>CalId Signals:
+<ul>
+<li>EKAT_CALID_01: EKAT_CALID_Index_01 — EKAT_CALID_Index_07</li>
+<li>EKAT_CALID_02: EKAT_CALID_Index_08 — EKAT_CALID_Index_16</li>
+</ul>
+</li>
+<li>Cvn PDU: EKAT_CVN</li>
+<li>Cvn Signals:EKAT_CVN_Byte_1 — EKAT_CVN_Byte_4, EKAT_CVN_VLD</li>
+</ul>
+</li>
+</ul>
+<p><img src="editor_image_49e64632-74ae-4fb3-8a21-1e61e6955b53.png" alt="alt text"></p>
+<p><img src="2021-07-05_21h51_49.png" alt="alt text"></p>
+<p><strong>4. CALID-CVN-Configuration for DiaBas</strong></p>
+<p><strong>Implementation of CVN / CALID</strong></p>
+<ul>
+<li>
+<p>If a CALID and/or CVN is provided by a sensor within one or more PDUs then:</p>
+<ul>
+<li>For each PDU only one DSQ shall be configured in PL / FRM --&gt; DSQ_ComdataXXX (XXX = PDU name without &quot;_&quot;; e.g for SCR_DEF2_CAL_ID2 = DSQ_ComdataSCRDEF2CALID2)</li>
+<li>Only for FR: for each CALID and / or CVN NO signal signal status is needed, because it will not be used!</li>
+</ul>
+</li>
+<li>
+<p>The following configuration parameters need to be provided to the ASW as per the DiaBas programmer's guide:</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Com-Interface Name</th>
+<th>Com-Interface Meaning</th>
+<th>ASW Configuration Tag</th>
+<th>ASW Configuration Parameter Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Com_stYYYCalid[X]</code></td>
+<td><strong>CALID array</strong><br><em>The ASW expects the complete CALID to be provided within one array (even if more than one PDU is used for receiving or multiplexed within one PDU).</em></td>
+<td><code>&amp;lt;CALID_REF_VALUE&amp;gt;</code></td>
+<td>16 byte array message containing the Cal ID from external ECU / module.<br> <em>Hint:</em> The message array has to be provided in the external tester format. E.g. <code>Message_array[0] = DATA A of Cal ID to tester</code>, <code>Message_array[1] = DATA B … Message_array[15] = DATA P of Cal ID</code>.</td>
+</tr>
+<tr>
+<td><code>Com_flgYYYCalidVld</code></td>
+<td><strong>CALID valid bit</strong><br><em>Provides information on the validity of the CALID, i.e. whether the complete CALID was received on the bus.</em></td>
+<td><code>&amp;lt;CALID_REF_STATUS_VALUE&amp;gt;</code></td>
+<td>Message containing the validity of Cal ID from external ECU / module.</td>
+</tr>
+<tr>
+<td><code>Com_flgYYYCalidErr</code></td>
+<td><strong>CALID error bit</strong><br><em>Provides information on the error status of the CALID, i.e. whether there has been a bus transmission failure.</em></td>
+<td><code>&amp;lt;CALID_REF_ERROR_VALUE&amp;gt;</code></td>
+<td>Message containing the error status of the Cal ID from external ECU / module.</td>
+</tr>
+<tr>
+<td><code>Com_nrCvnYYY[X]</code></td>
+<td><strong>CVN array</strong><br><em>The ASW expects the complete CVN to be provided within one array</em><br>(Currently all implemented CVNs have 4 byte –&gt; programmers guide from DiaBas).</td>
+<td><code>&amp;lt;CVN_REF_VALUE&amp;gt;</code></td>
+<td>4 byte array message containing the CVN from external ECU / module.<br><em>Hint:</em> The message array has to be provided in the external tester format. E.g. <code>Message_array[0] = DATA A of CVN … Message_array[3] = DATA D of CVN</code>.</td>
+</tr>
+<tr>
+<td><code>Com_flgYYYCvnVld</code></td>
+<td><strong>CVN valid bit</strong><br><em>Provides information on the validity of the CVN, i.e. whether the complete CVN was received on the bus (for some CVN, a separate valid bus signal is available e.g. <code>BOOST_CVN_VLD</code>).</em></td>
+<td><code>&amp;lt;CVN_REF_STATUS_VALUE&amp;gt;</code></td>
+<td>Message containing the validity of CVN from external ECU / module.</td>
+</tr>
+<tr>
+<td><code>Com_flgYYYCvnQly</code></td>
+<td><strong>CVN quality bit</strong><br><em>Provides information on the quality of the received CVN, i.e. whether the content of the received CVN is proper.</em></td>
+<td><code>&amp;lt;CVN_REF_STATUS2_VALUE&amp;gt;</code></td>
+<td>Message containing the quality of CVN from external ECU / module.</td>
+</tr>
+<tr>
+<td><code>Com_flgYYYCvnErr</code></td>
+<td><strong>CVN error bit</strong><br><em>Provides information on the error status of the CVN, i.e. whether there has been a bus transmission failure.</em></td>
+<td><code>&amp;lt;CVN_REF_ERROR_VALUE&amp;gt;</code></td>
+<td>Message containing the error status of the CVN from external ECU / module.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>YYY</strong> = PDU name without &quot;_&quot; and without the corresponding PDU number (e.g. for SCR DEF2 two PDUs are used SCR_DEF2_CAL_ID1 and SCR_DEF2_CAL_ID2 --&gt; Com_stSCRDEF2CALIDCalid[x])</li>
+<li>A reference implementation can be seen in SnsrECU_Boost 1.2.0;0</li>
+<li>For reference see: DOCMISC : diabas_programmersguide_pdf / 30000.9.0; 0</li>
+</ul>
+<p><strong>5. CALID-CVN-Testing</strong></p>
+<p><strong>5.1. Definition of Term</strong></p>
+<p><strong>CALID:</strong></p>
+<ul>
+<li>The CALID consists of 16 bytes, for easier handling they are called DATA A — P.</li>
+<li>For correct display of the CALID on the tester, the tester expects the CALID as an uint8 array: Com_st&lt;<code>ecu-name</code>&gt;Calid[].</li>
+<li>The CALID needs to be prepared in the array in that format:
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DATA A</td>
+<td>Com_st&lt;<code>ecu-name</code>&gt;Calid[0]</td>
+</tr>
+<tr>
+<td>DATA B</td>
+<td>Com_st&lt;<code>ecu-name</code>&gt;Calid[1]</td>
+</tr>
+<tr>
+<td>DATA C</td>
+<td>Com_st&lt;<code>ecu-name</code>&gt;Calid[2]</td>
+</tr>
+<tr>
+<td>DATA D</td>
+<td>Com_st&lt;<code>ecu-name</code>&gt;Calid[3]</td>
+</tr>
+<tr>
+<td>DATA E</td>
+<td>Com_st&lt;<code>ecu-name</code>&gt;Calid[4]</td>
+</tr>
+<tr>
+<td>DATA F</td>
+<td>Com_st&lt;<code>ecu-name</code>&gt;Calid[5]</td>
+</tr>
+<tr>
+<td>DATA G</td>
+<td>Com_st&lt;<code>ecu-name</code>&gt;Calid[6]</td>
+</tr>
+<tr>
+<td>DATA H</td>
+<td>Com_st&lt;<code>ecu-name</code>&gt;Calid[7]</td>
+</tr>
+<tr>
+<td>DATA I</td>
+<td>Com_st&lt;<code>ecu-name</code>&gt;Calid[8]</td>
+</tr>
+<tr>
+<td>DATA J</td>
+<td>Com_st&lt;<code>ecu-name</code>&gt;Calid[9]</td>
+</tr>
+<tr>
+<td>DATA K</td>
+<td>Com_st&lt;<code>ecu-name</code>&gt;Calid[10]</td>
+</tr>
+<tr>
+<td>DATA L</td>
+<td>Com_st&lt;<code>ecu-name</code>&gt;Calid[11]</td>
+</tr>
+<tr>
+<td>DATA M</td>
+<td>Com_st&lt;<code>ecu-name</code>&gt;Calid[12]</td>
+</tr>
+<tr>
+<td>DATA N</td>
+<td>Com_st&lt;<code>ecu-name</code>&gt;Calid[13]</td>
+</tr>
+<tr>
+<td>DATA O</td>
+<td>Com_st&lt;<code>ecu-name</code>&gt;Calid[14]</td>
+</tr>
+<tr>
+<td>DATA P</td>
+<td>Com_st&lt;<code>ecu-name</code>&gt;Calid[15]</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p><strong>CVN:</strong></p>
+<ul>
+<li>The CVN consists of 4 bytes, for easier handling the are called: DATA A – D.</li>
+<li>For correct display of the CVN on the tester, the tester expects the CAN provided as uint8 array: Com_nrCvn&lt;<code>ecu-name</code>&gt;[].</li>
+<li>The CVN needs to be prepared in the array in that format:
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DATA A</td>
+<td>Com_nrCvn&lt;<code>ecu-name</code>&gt;[0]</td>
+</tr>
+<tr>
+<td>DATA B</td>
+<td>Com_nrCvn&lt;<code>ecu-name</code>&gt;[1]</td>
+</tr>
+<tr>
+<td>DATA C</td>
+<td>Com_nrCvn&lt;<code>ecu-name</code>&gt;[2]</td>
+</tr>
+<tr>
+<td>DATA D</td>
+<td>Com_nrCvn&lt;<code>ecu-name</code>&gt;[3]</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p><strong>Preconditions:</strong></p>
+<ul>
+<li>The CALID- and CVN-PDUs need to be enabled: Bit 0</li>
+<li>The CALID and CVN to be displayed on the tester needs to be calibrated in I15031_srv9_CALIDCVN_Seq_CA and I15031_CalidCvn_SrvTstr_Seq_CA</li>
+<li>The CVN in the tester output has to be read from left to right, beginning with DATA A - B - C - D (e.g. 0A 0B 0C 0D in hex)</li>
+<li>The CALID has to be read equal in the tester, to the CVN, starting with DATA A --&gt; P</li>
+<li>To provide the tester the CVN in a proper format we also have to know how DATA A-D is provided on the bus. According to our understanding the CVN is written on the bus signals:
+<ul>
+<li>CVN provided in one PDU with 4x 1byte bus signals (e.g. CCU- and Boost-CVN)
+<ul>
+<li>CCU_CVN_Byte_1 [Byte 5 Bit [8 &lt;— 0]]  --&gt; DATA A</li>
+<li>CCU_CVN_Byte_2 [Byte 6 Bit [8 &lt;— 0]]  --&gt; DATA B</li>
+<li>CCU_CVN_Byte_3 [Byte 7 Bit [8 &lt;— 0]]  --&gt; DATA C</li>
+<li>CCU_CVN_Byte_4 [Byte 8 Bit [8 &lt;— 0]]  --&gt; DATA D</li>
+</ul>
+</li>
+<li>CVN provided in one PDU with 1x 32bit (4Byte) bus signal (e.g. GW-CVN)
+<ul>
+<li>GW_CVN [Byte 5 Bit [8 &lt;— 0]]  --&gt; DATA D</li>
+<li>GW_CVN [Byte 6 Bit [8 &lt;— 0]]  --&gt; DATA C</li>
+<li>GW_CVN [Byte 7 Bit [8 &lt;— 0]]  --&gt; DATA B</li>
+<li>GW_CVN [Byte 8 Bit [8 &lt;— 0]]  --&gt; DATA A</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>CVN / CALID have always to be tested with Diagra / Tester!! Only with INCA, the testing is not enough</li>
+<li>CVN / CALID have always to be tested for IFX and JDP to verify the proper output and endianness</li>
+<li>Before testing take care that the CVN / CALID is proper configured in your test PVER
+<ul>
+<li>check CVN / CALID config in I15031_srv9_confdata.xml</li>
+<li>proper application of I15031_srv9_CALIDCVN_Seq_CA and I15031_CalidCvn_SrvTstr_Seq_CA</li>
+<li>take care that necessary PDUs are activated / available in ComVeh</li>
+</ul>
+</li>
+</ul>
+<p><strong>6. Little Endian - Big Endian</strong></p>
+<ul>
+<li>
+<p><strong>Little Endian (LE) / Big Endian (BE) explanation. (examples given for a 32 bit system).</strong></p>
+<ul>
+<li>
+<p>Endianness describes in which Byte order Words are stored in the memory.</p>
+</li>
+<li>
+<p>In a 32 bit system, a Word is 32 bits long and consists of 4 Bytes.</p>
+</li>
+<li>
+<p>Little Endian (LE) means, the Least Significant Byte (LSB) of a Word is stored at the lowest memory address of that Word.</p>
+<p><img src="editor_image_50a1f249-1fd7-4de9-8a37-10ea5b0628fd.png" alt="alt text"></p>
+</li>
+<li>
+<p>Big Endian (BE) means, the Most Significant Byte (MSB) of a Word is stored at the lowest memory address of that Word.</p>
+<p><img src="editor_image_10880779-c616-42cf-892d-0d7fe864b28e.png" alt="alt text"></p>
+</li>
+<li>
+<p>The bit order inside a Byte, is not effected by endianness and stays the same.</p>
+</li>
+<li>
+<p>E.g. 32 bit Word AA BB CC DDh</p>
+</li>
+</ul>
+</li>
+<li>
+<p>When red in that representation, the leftmost number is the most significant --&gt; MSB = AAh</p>
+</li>
+<li>
+<p>The rightmost number is the lest significant --&gt; LSB = DDh</p>
+<ul>
+<li>
+<p>Mem storage for LE:</p>
+<p><img src="editor_image_3719c9c8-bdc9-43dc-894a-9d5f51f9f08a.png" alt="alt text"></p>
+</li>
+<li>
+<p>Mem storage for BE:</p>
+<p><img src="editor_image_432ade77-b48c-424c-82fc-c30a75e26367.png" alt="alt text"></p>
+</li>
+</ul>
+</li>
+<li>
+<p>A CVN number is a 32 bit number divided in the 4 8-bit blocks A,B,C,D.</p>
+</li>
+<li>
+<p>Those blocks are displayed in the Tester Software in the format A - B - C - D.</p>
+</li>
+<li>
+<p>In that nomenclature, Block A is the MSB of the CVN and Block D is the LSB.</p>
+</li>
+<li>
+<p>The CVN is provided to the DiaBas service via a Byte array with 4 Element: Com_nrCVN[0] - Com_nrCVN[3]</p>
+</li>
+<li>
+<p>Array element 0 gest mapped to the display cell A and element 3 gets mapped to the display cell D.</p>
+</li>
+<li>
+<p>When the CVN is sent via 4 separate 8-bit signals on the bus, endianness in the ECU is irrelevant and  each byte can be mapped separately to the array elements according to their naming.</p>
+</li>
+<li>
+<p>When the CVN is sent via 1 32-bit signal, the 32-bit memory representation of the signal needs to be divided into 4 8-bit blocks and mapped to the array elements according to the endianness of the system.</p>
+</li>
+<li>
+<p>Based on the Tester Display in the format A - B - C - D, Com_nrCVN[0] must hold the MSB of the 32-bit bus signal and Com_nrCVN[3] must hold the LSB of the 32.bit bus signal.</p>
+</li>
+<li>
+<p>E.g. CVN = 33 22 11 00h and is transmitted via a 32-bit bus signal holding value 33 22 11 00h. CVN needs to be displayed in the Tester in the Form 33 -22 - 11 - 00. The mapping can be shown easily in a diagramm:</p>
+<p><img src="editor_image_b912e96b-86fd-43df-885e-cb0ff6b3d190.png" alt="alt text"></p>
+<p><img src="editor_image_966948da-26c8-46a2-8eb2-14fc2716499e.png" alt="alt text"></p>
+</li>
+<li>
+<p>MSB path is marked red, LSB path is marked green.</p>
+<ul>
+<li>IFX CPUs are LE.</li>
+<li>JDP CPUs are BE.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="summary-section-summary-of-notes">Summary Section (Summary of Notes)</h3>
+<p><a href="https://www.iso.org/obp/ui/#iso:std:iso:15031:-1:ed-2:v1:en">CALIDCVN</a>
+<a href="https://www.google.com/search?client=firefox-b-e&amp;channel=entpr&amp;q=CALID+CVN+">CALIDCVN_Autosar</a></p>
+
+</body>
+</html>
