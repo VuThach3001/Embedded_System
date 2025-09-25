@@ -17,6 +17,62 @@
 - CALID = Calibration ID = Kalibrierungs-Identifikation = Calibration identification
 - CVN = Calibration Verification Number = Prüfsumme = Checksum
 
+**1.1. CALID**
+- Identification code for a specific software/calibration contained in a server/electronic control unit (ECU)
+- Note 1 to entry: If regulations require calibration identifications for emission-related software, those shall be reported in a standardized format as specified in SAE J1979-DA.
+
+**1.2. CVN**
+- Server/ECU calculated verification number of a calibration identification number to verify the integrity of the software/calibration contained in a server/ECU
+- Note 1 to entry: If regulations require calibration identifications for emission-related software, those shall be reported in a standardised format as specified in ISO 15031-2.
+
+**1.3. Secondary ECU**
+- In the following, a specification of the OBD handling in AUTOSAR is introduced. Herein,
+- “OBD“ is used for automotive OBD with respect to different target markets. For SW-
+sharing and distributed development reasons as well as aspects of packaging and
+responsibility of releases, the OBD-relevant information / data structures need to be
+reported via Standardized AUTOSAR interfaces.
+- In a vehicle there can be 3 different kinds of OBD ECUs:
+  - Master ECU (one per vehicle), in WWH-OBD referenced as VOBD
+  - Primary ECU (several per vehicle)
+  - **Dependent / Secondary ECUs** (several per vehicle)
+- From the Basic Software point of view **Dependent / Secondary ECUs** doesn’t
+need any specific OBD functionality. In **Dependent / Secondary ECUs** are always
+related to a Master or a Primary ECU. In **Dependent / Secondary ECUs** OBD-
+relevant information will not be stored in the Basic Software (e.g. OBD events will be
+forwarded to the respective Master or Primary ECU via the Bussystem). In Depen-
+dent / Secondary ECUs this "reported errors" and other OBD functionality might
+be handeled by a SW component.
+
+**1.4. AUTOSAR Standard**
+- Following [AUTOSAR - Remote Event Communication
+Protocol Specification](https://www.autosar.org/fileadmin/standards/R17-03_R1.1.0/FO/AUTOSAR_PRS_RemoteEventCommunicationProtocol.pdf) standard
+- Information for [Secondary ECU](https://www.autosar.org/fileadmin/standards/R20-11/CP/AUTOSAR_SWS_DiagnosticEventManager.pdf)
+
+**1.5. Protocol Specification:**
+
+**Message formats**
+- This chapter specifies all of the message formats of the RecM Bus Protocol.
+- Unless otherwise specified, all messages are of the "fire and forget" type; meaning
+that, after a request is sent, there is no response message.
+- For both the **Status** and **Management messages**, the same basic RecM Bus Protocol
+message format is used. It consists of the Header segment, the Payload segment and
+the Tail segment.
+
+![alt text](image.png)
+
+- The Header of all **Status messages** contains three fields: a Message Type, a Client
+Identifier and a Reserved field.
+- The Header of all **Management messages** contains two fields: a Message Type and a
+Reserved field.
+- The Tail of both the **Status** and **Management messages** contains a common Message
+Counter field.
+
+**Client Identifier (CLIENT_ID) field format**
+- The Client Identifier (CLIENT_ID) is a Secondary ECU identifier which is obtained from the Diagnostic Management module.
+
+
+
+
 **2. CALID-CVN-Toolchain and Workflow**
 
 **2.1. CALID-CVN-Toolchain Overview**
@@ -101,37 +157,37 @@
 
 **CALID:**
 - The CALID consists of 16 bytes, for easier handling they are called DATA A — P.
-- For correct display of the CALID on the tester, the tester expects the CALID as an uint8 array: Com_st<ecu-name>Calid[].
+- For correct display of the CALID on the tester, the tester expects the CALID as an uint8 array: Com_st<``ecu-name``>Calid[].
 - The CALID needs to be prepared in the array in that format:
-  |        |                           |
-  | ------ | ------------------------- |
-  | DATA A | Com_st<ecu-name>Calid[0]  |
-  | DATA B | Com_st<ecu-name>Calid[1]  |
-  | DATA C | Com_st<ecu-name>Calid[2]  |
-  | DATA D | Com_st<ecu-name>Calid[3]  |
-  | DATA E | Com_st<ecu-name>Calid[4]  |
-  | DATA F | Com_st<ecu-name>Calid[5]  |
-  | DATA G | Com_st<ecu-name>Calid[6]  |
-  | DATA H | Com_st<ecu-name>Calid[7]  |
-  | DATA I | Com_st<ecu-name>Calid[8]  |
-  | DATA J | Com_st<ecu-name>Calid[9]  |
-  | DATA K | Com_st<ecu-name>Calid[10] |
-  | DATA L | Com_st<ecu-name>Calid[11] |
-  | DATA M | Com_st<ecu-name>Calid[12] |
-  | DATA N | Com_st<ecu-name>Calid[13] |
-  | DATA O | Com_st<ecu-name>Calid[14] |
-  | DATA P | Com_st<ecu-name>Calid[15] |
+  |        |                             |
+  | ------ | --------------------------- |
+  | DATA A | Com_st<`ecu-name`>Calid[0]  |
+  | DATA B | Com_st<`ecu-name`>Calid[1]  |
+  | DATA C | Com_st<`ecu-name`>Calid[2]  |
+  | DATA D | Com_st<`ecu-name`>Calid[3]  |
+  | DATA E | Com_st<`ecu-name`>Calid[4]  |
+  | DATA F | Com_st<`ecu-name`>Calid[5]  |
+  | DATA G | Com_st<`ecu-name`>Calid[6]  |
+  | DATA H | Com_st<`ecu-name`>Calid[7]  |
+  | DATA I | Com_st<`ecu-name`>Calid[8]  |
+  | DATA J | Com_st<`ecu-name`>Calid[9]  |
+  | DATA K | Com_st<`ecu-name`>Calid[10] |
+  | DATA L | Com_st<`ecu-name`>Calid[11] |
+  | DATA M | Com_st<`ecu-name`>Calid[12] |
+  | DATA N | Com_st<`ecu-name`>Calid[13] |
+  | DATA O | Com_st<`ecu-name`>Calid[14] |
+  | DATA P | Com_st<`ecu-name`>Calid[15] |
 
 **CVN:**
 - The CVN consists of 4 bytes, for easier handling the are called: DATA A – D. 
-- For correct display of the CVN on the tester, the tester expects the CAN provided as uint8 array: Com_nrCvn<ecu-name>[].
+- For correct display of the CVN on the tester, the tester expects the CAN provided as uint8 array: Com_nrCvn<``ecu-name``>[].
 - The CVN needs to be prepared in the array in that format:
-  |        |                        |
-  | ------ | ---------------------- |
-  | DATA A | Com_nrCvn<ecu-name>[0] |
-  | DATA B | Com_nrCvn<ecu-name>[1] |
-  | DATA C | Com_nrCvn<ecu-name>[2] |
-  | DATA D | Com_nrCvn<ecu-name>[3] |
+  |        |                          |
+  | ------ | ------------------------ |
+  | DATA A | Com_nrCvn<`ecu-name`>[0] |
+  | DATA B | Com_nrCvn<`ecu-name`>[1] |
+  | DATA C | Com_nrCvn<`ecu-name`>[2] |
+  | DATA D | Com_nrCvn<`ecu-name`>[3] |
 
 **Preconditions:**
 - The CALID- and CVN-PDUs need to be enabled: Bit 0 
@@ -201,4 +257,5 @@
 
 ### Summary Section (Summary of Notes)
 
-[Insert a brief summary of the key ideas and takeaways]
+[CALIDCVN](https://www.iso.org/obp/ui/#iso:std:iso:15031:-1:ed-2:v1:en)
+[CALIDCVN_Autosar](https://www.google.com/search?client=firefox-b-e&channel=entpr&q=CALID+CVN+)
